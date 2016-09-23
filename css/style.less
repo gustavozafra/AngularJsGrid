@@ -1,0 +1,88 @@
+@primaryColor : #009688;
+@darkPrimaryColor : #024457;
+
+body {
+    padding: 5em 2em;
+    font-family: Arial, sans-serif;
+    color: @darkPrimaryColor;
+    background: #f2f2f2;
+}
+h1 {
+    font-family: Verdana;
+    font-weight: normal;
+    color: @darkPrimaryColor;
+}
+h1 span {
+    color: @primaryColor;
+    font-size: x-large;
+}
+
+//LAYOUT ADAPTER
+.my-primary{
+    background-color:  @primaryColor !important;
+    color: white !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+} 
+
+.bg-primary {
+    background-color:  @primaryColor !important
+}
+a.bg-primary:focus,
+a.bg-primary:hover {
+    background-color:  @primaryColor !important
+}
+
+.btn-primary {
+    background-color: @primaryColor  !important;
+    border-color: @primaryColor !important;
+}
+.btn-primary:hover {
+    background-color: @darkPrimaryColor !important;
+    border-color: @darkPrimaryColor !important;
+}
+.btn-primary.focus,
+.btn-primary:focus {
+    background-color: @primaryColor !important;
+    border-color: @primaryColor !important;
+}
+
+//DIALOG
+.my-dialog{
+    color: @primaryColor !important;
+    min-width: 300px;
+    min-height: 150px;
+}
+
+//RADIO BUTTON
+
+input[type="radio"] {
+  margin:5px 40px;
+  width: 24px;
+  height: 24px;
+  background: #eeeeee;
+  box-shadow:
+    inset 0 0 0 .4em #FFF,
+    0 0 0 .3em;
+  border-radius: 50%;
+  transition: .2s;
+  cursor:pointer;
+  color: @darkPrimaryColor;
+
+  &:hover,
+  &:checked {
+    background: @primaryColor;
+    box-shadow:
+    inset 0 0 0 .6em white,
+    0 0 0 .3em;
+  }
+  
+  &:checked {
+    background: @primaryColor;
+    box-shadow:
+      inset 0 0 0 .4em white,
+      0 0 0 .3em @primaryColor;
+  } 
+
+  &:focus { outline: 0; }
+}

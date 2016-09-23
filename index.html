@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html ng-app="testS2IT">
+    <head>
+        <title></title>
+
+        <!-- META TAGS -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+
+        <!-- LESS USAGE -->
+        <script type="text/javascript" src="js/libs/less.min.js"></script>
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" href="css/libs/bootstrap-4.0.0.min.css">
+        <link rel="stylesheet" href="css/libs/vandertable.css">
+
+        <!-- JS -->
+        <script type="text/javascript" src="js/libs/angular.min.js"></script>
+        <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+        <script type="text/javascript" src="js/libs/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        
+        <script type="text/javascript" src="js/libs/vandertable.js"></script>
+
+        <!-- CONTROLLERS -->
+        <script type="text/javascript" src="js/controllers/transacao-controller.js"></script>
+
+    </head>
+    <body ng-controller="TransacaoController">
+        <div class="container">
+
+            <h1>S2IT
+                <span>Webmaster Front-end Developer Test</span>
+            </h1>
+            <h4 class="pull-right">Gustavo Gimenes Zafra</h4>
+
+            <br>
+
+            <h5>Tecnologias utilizadas:</h5>
+
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>LESS</li>
+                <li>AngularJS</li>
+                <li>JavaScript</li>
+                <li>AngularJS</li>
+                <li>Vandertable (Plug-in JQuery de autoria própria) <span class="text-uppercase">Dependências</span> : JQuery e JQuery-UI</li>
+            </ul>
+
+            <br>
+
+            <hr>
+
+            <form role="form" ng-submit="addTransacao()">
+                <div class="row">
+                    <div class="col-sm-3 form-group">
+                        <input type="radio" ng-model="tipo" id="tipo"  name="tipo" value="Saque" checked> Saque
+                    </div>
+                    <div class="col-sm-3 form-group">
+                        <input type="radio" ng-model="tipo"  name="tipo" value="Depósito"> Deposito
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon my-primary">R$</span>
+                            <input class="form-control" type="text" onkeyup="moneyMask(this)" name="valor" ng-model="valor" id="valor">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-primary">
+                                    Adicionar
+                                </button>
+                            </span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <table class="VanderTable">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Valor (R$)</th>
+                    <th>Remover</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="transacao in transacoes">
+                    <td>
+                        {{transacao.tipo}}
+                    </td>
+                    <td>
+                        {{transacao.valor}}
+                    </td>
+                    <td class="btRemover">
+                        <button ng-click="removerTransacao(transacao.tipo, transacao.valor );" title="Remover" class="btn btn-primary btn-xs">
+                            X
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>TOTAL (R$):</th>
+                    <th colspan="2">{{valorTotal}}</th>
+                </tr>
+            </tfoot>
+        </table>
+
+        <hr />
+
+        <span>**Experimente também arrastar as rows para reordenação da tabela. Essa é uma das funcionalidades do plug-in VanderTable que estou desenvolvendo e em breve estarei publicando em meu GitHub.</span>
+
+        <dialog id="dialogErros" class="my-dialog">
+            <h4 class="dialog-title">Atenção!</h4>
+            <div class="dialog-content">
+            <p id="dialogContent">
+                
+            </p>
+            </div>
+            <div class="dialog-footer">
+            <button type="button" class="close">OK</button>
+            </div>
+        </dialog>
+    </body>
+</html>

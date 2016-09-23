@@ -1,0 +1,71 @@
+body {
+  padding: 5em 2em;
+  font-family: Arial, sans-serif;
+  color: #024457;
+  background: #f2f2f2;
+}
+h1 {
+  font-family: Verdana;
+  font-weight: normal;
+  color: #024457;
+}
+h1 span {
+  color: #009688;
+  font-size: x-large;
+}
+.my-primary {
+  background-color: #009688 !important;
+  color: white !important;
+  font-weight: bold !important;
+  font-size: 16px !important;
+}
+.bg-primary {
+  background-color: #009688 !important;
+}
+a.bg-primary:focus,
+a.bg-primary:hover {
+  background-color: #009688 !important;
+}
+.btn-primary {
+  background-color: #009688 !important;
+  border-color: #009688 !important;
+}
+.btn-primary:hover {
+  background-color: #024457 !important;
+  border-color: #024457 !important;
+}
+.btn-primary.focus,
+.btn-primary:focus {
+  background-color: #009688 !important;
+  border-color: #009688 !important;
+}
+.my-dialog {
+  color: #009688 !important;
+  min-width: 300px;
+  min-height: 150px;
+}
+input[type="radio"] {
+  margin: 5px 40px;
+  width: 24px;
+  height: 24px;
+  background: #eeeeee;
+  box-shadow: inset 0 0 0 .4em #FFF,
+    0 0 0 .3em;
+  border-radius: 50%;
+  transition: .2s;
+  cursor: pointer;
+  color: #024457;
+}
+input[type="radio"]:hover,
+input[type="radio"]:checked {
+  background: #009688;
+  box-shadow: inset 0 0 0 .6em white,
+    0 0 0 .3em;
+}
+input[type="radio"]:checked {
+  background: #009688;
+  box-shadow: inset 0 0 0 0.4em white, 0 0 0 0.3em #009688;
+}
+input[type="radio"]:focus {
+  outline: 0;
+}
